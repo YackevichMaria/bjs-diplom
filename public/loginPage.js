@@ -8,8 +8,8 @@ userForm.loginFormCallback = data => {
         if (callback.success) {
             location.reload();
         } else {
-            console.log(callback.data);
-            userForm.setLoginErrorMessage(callback.data);
+            console.log(callback.error);
+            userForm.setLoginErrorMessage(callback.error);
         }
     });
 };
