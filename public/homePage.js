@@ -81,7 +81,7 @@ ApiConnector.getFavorites (callback => {
     if (callback.success) {
         favoritesWidget.clearTable();
         favoritesWidget.fillTable(callback.data);
-        favoritesWidget.updateUsersList(callback.data);
+        moneyManager.updateUsersList(callback.data);
     }
 });
 
