@@ -20,8 +20,8 @@ userForm.registerFormCallback = data => {
         if (callback.success) {
             location.reload();
         } else {
-            console.log(callback.data);
-            userForm.setRegisterErrorMessage(callback.data);
+            console.log(callback.error);
+            userForm.setRegisterErrorMessage(callback.error);
         }
     });
 };
