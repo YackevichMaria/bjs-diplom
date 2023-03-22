@@ -44,7 +44,7 @@ moneyManager.addMoneyCallback = ({ currency, amount }) => {
             ProfileWidget.showProfile(callback.data);
             moneyManager.setMessage(callback.success, `Баланс успешно пополнен на ${amount} ${currency}`);
         } else {
-            moneyManager.setMessage(!callback.success, callback.error);
+            moneyManager.setMessage(callback.success, callback.error);
         }
     }) 
 }
@@ -56,7 +56,7 @@ moneyManager.conversionMoneyCallback = ({ fromCurrency, targetCurrency, fromAmou
             ProfileWidget.showProfile(callback.data);
             moneyManager.setMessage(callback.success, `Конвертирование ${fromAmount} ${fromCurrency} в ${targetCurrency} выполнено успешно`);
         } else {
-            moneyManager.setMessage(!callback.success, callback.error);
+            moneyManager.setMessage(callback.success, callback.error);
         }
     })
 }
@@ -68,7 +68,7 @@ moneyManager.sendMoneyCallback = ({ to, currency, amount }) => {
             ProfileWidget.showProfile(callback.data);
             moneyManager.setMessage(callback.success, `Перевод ${amount} ${currency} пользователю ${to} выполнен`);
         } else {
-            moneyManager.setMessage(!callback.success, callback.error);
+            moneyManager.setMessage(callback.success, callback.error);
         }
     })
 }
@@ -94,7 +94,7 @@ favoritesWidget.addUserCallback = ({id, name}) => {
             favoritesWidget.updateUsersList(callback.data);
             favoritesWidget.setMessage(callback.success, "Пользователь успешно добавлен");
         } else {
-            favoritesWidget.setMessage(!callback.success, callback.error);
+            favoritesWidget.setMessage(callback.success, callback.error);
         }
     });
 }
@@ -108,7 +108,7 @@ favoritesWidget.removeUserCallback = (id) => {
             favoritesWidget.updateUsersList(callback.data);
             favoritesWidget.setMessage(callback.success, "Пользователь удален");
         } else {
-            favoritesWidget.setMessage(!callback.success, callback.error);
+            favoritesWidget.setMessage(callback.success, callback.error);
         }
     })
     
